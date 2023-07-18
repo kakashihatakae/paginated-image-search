@@ -1,6 +1,44 @@
-# Getting Started with Create React App
+# Introduction
+- This is a paginated list of pictures from Pixabay portal. 
+- Type your query in the search box to see images related to your query.
+- You can go one page up or one page down by clicking on the arrows on left and right side of the page.
+- Click on the image and you'll be taken profile of the user/owner who has uploaded the picture on Pixabay.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Developer corner
+
+| State Variables       |Description                       
+|----------------------|-------------------------------|
+|`pageNumber`          | the current page number       |
+|`query`               | query string that the user entered in the box|
+
+**Material UI**
+The project uses **Material UI** as a component library. Also **Styled Components** are used
+to style the components. 
+
+**Home Icon**
+When a user clicks on the home icon on the top-left corner of the page, we pull image data
+for an empty query string. This way we see a generalised view of the available images on the pixabay website.
+
+|Home Page| Page with Search Query|
+|---------|-----------------------|
+|![Home Page](../image-search/readmeImages/Screenshot%202023-07-18%20at%203.55.39%20PM.png)|![page with query](./readmeImages/Screenshot%202023-07-18%20at%203.56.02%20PM.png)
+
+**Fetching of Images**
+When the user types his/her query in the search box and clicks **Search**, they are shown results related to the search query. **fetch** is used to fetch images from pexel API, to learn more check the `useLoadImages`  custom hook in `src/Components/Home/utils.ts`.
+
+**Increment/Decrement Arrow Icon hiding**
+Arrow icons used to increment or decrement page are hidden if the user is on the first or last page. Similarly Arrow icons used to increment paginationNumber are also hidden.
+
+**Pagination**
+The user will be shown a pagination view from where he/she can choose a specific page number or choose to move up/down one page relative to the current page
+
+![pagination](./readmeImages/Screenshot%202023-07-18%20at%203.57.44%20PM.png)
+
+**User Prpfile**
+When a user clicks on any of the images he/she is routed to the page where we can see information related to a user who has posted that particular image on Pixabay. We can see information related to likes, comments, tags and the username of the user. You can find more information in `ImagePage` in `src/Components/ImagePage`
+
+![User profile](./readmeImages/Screenshot%202023-07-18%20at%203.57.21%20PM.png)
+
 
 ## Available Scripts
 
